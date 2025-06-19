@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class KokoEatingBanana {
     public int kokoEat(int[] arr, int k) {
         int low = 1;

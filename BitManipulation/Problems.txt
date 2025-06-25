@@ -1,0 +1,63 @@
+-->Swapping Two numbers using bit manipulation:
+class Solution{
+	public void swap(int x,int y){
+		x = x ^ y;
+		y = x ^ y;
+		x = x ^ y; 
+	}
+}
+-Step1: x = xor of x and y
+-Step2: y = xor of x(x xor y) and y (results x)
+-Step3: x = xor of x(x xor y) and y(now contains value of x) (results y)
+
+
+-->Check if ith bit is set or not(can be done using both left and right shift):
+class Solution{
+	public boolean check(int n,int i){
+		if((n>>i)==1)
+			return true;
+		else
+			return false;
+	}
+}
+
+
+-->Setting the ith bit to 1:
+class Solution{
+	public int setBit(int n,int i){
+		return n|(1<<i);
+	}
+}
+
+
+-->Toggle the ith bit:(xor operation)
+class Solution{
+	public int toggleBit(int n,int i){
+		return n^(1<<i);
+	}
+}
+
+-->Clearing the rightmost bit in the number:
+class Solution{
+	public int resetBit(int n,int i){
+		return n&(n-1);
+	}
+}
+example: Todo:-40(101000)-->100000
+	39: 100111
+	101000 & 100111 = 100000
+
+
+-->Setting the rightmost bit:i | (i + 1)
+
+-->Count the number of set bits:
+class Solution {
+    public int countSetBits(int n) {
+        int count = 0;
+		while(n!=0){
+			n & (n-1);
+			count++;
+		}
+		return count;
+    }
+}
